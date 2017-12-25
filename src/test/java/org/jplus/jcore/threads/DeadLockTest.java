@@ -1,8 +1,6 @@
-package org.jplus.threads;
+package org.jplus.jcore.threads;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class DeadLockTest {
 

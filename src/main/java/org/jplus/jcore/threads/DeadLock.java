@@ -1,4 +1,4 @@
-package org.jplus.threads;
+package org.jplus.jcore.threads;
 
 public class DeadLock {
 
