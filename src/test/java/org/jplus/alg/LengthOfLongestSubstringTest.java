@@ -31,4 +31,9 @@ public class LengthOfLongestSubstringTest {
     public void lengthOfLongestSubstring_pwwkew() {
         assertEquals(3, solution.lengthOfLongestSubstring("pwwkew"));
     }
+
+    @Test
+    public void lengthOfLongestSubstring_dvdf() {
+        assertEquals(3, solution.lengthOfLongestSubstring("dvdf"));
+    }
 }
