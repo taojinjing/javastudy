@@ -2,26 +2,22 @@ package org.jplus.alg;
 
 public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null) {
             return 0;
         }
 
         int result = 0;
         char[] charArray = s.toCharArray();
-        StringBuilder buffer = new StringBuilder(String.valueOf(charArray[0]));
-        for (int i = 1; i < s.length(); i++) {
-            int index = buffer.indexOf(String.valueOf(charArray[i]));
-            if (index > -1) {
-                if (result < buffer.length()) {
-                    result = buffer.length();
+        int startPoint = 0;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = startPoint; j < i; j++) {
+                if (charArray[j] == charArray[i]) {
+                    startPoint = j + 1;
                 }
-                buffer.delete(0, index + 1);
             }
-            buffer.append(charArray[i]);
-        }
-
-        if (result < buffer.length()) {
-            result = buffer.length();
+            if (result < i + 1 - startPoint) {
+                result = i + 1 - startPoint;
+            }
         }
         return result;
     }
